@@ -37,6 +37,7 @@ private:
     int turnAroundTime;
     int waitingTime;
 
+    int totalDuration;
     int state;
     std::string stateStr;
 
@@ -69,6 +70,8 @@ public:
     void setWaitingTime(int newWaitingTime);
     int getId() const;
     void setId(int newId);
+    int getTotalDuration() const;
+    void setTotalDuration(int newTotalDuration);
 };
 
 #endif // PROCESS_H

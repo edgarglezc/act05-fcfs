@@ -6,6 +6,16 @@
  * Consturctor por defecto de Process.
  * Asigna todos los valores a 0.
  */
+int Process::getTotalDuration() const
+{
+    return totalDuration;
+}
+
+void Process::setTotalDuration(int newTotalDuration)
+{
+    totalDuration = newTotalDuration;
+}
+
 Process::Process() {
     this->id = 0;
     this->name = "NONAME";
@@ -40,6 +50,7 @@ Process::Process(const int& id, const std::string& name, const int& bt,
     this->turnAroundTime = 0;
     this->waitingTime = 0;
     this->setState(state);
+    this->totalDuration = bt;
 }
 
 

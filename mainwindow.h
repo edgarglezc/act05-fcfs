@@ -54,22 +54,24 @@ private:
     // ----------------------------------------
 
     // Hilos necesarios para ejecutar el programa
-    std::thread processTableThread;
     std::thread actualProcessThread;
     std::thread executeProcessThread;
     std::thread executeGlobalCounterThread;
 
-    // Funciones de los hilos
-    void updateProcessTable();
+    // Funciones de los hilos    
     void executeActualProcess();
     void updateActualProcess();
     void executeGlobalCounter();
 
     // Funciones del programa
+    void updateProcessTable();
     void updateEndedProcessTable();
+    void updateProcess();
+    void calculateFCFS();
+
 
     enum Column {
-        name, duration, state
+        id, name, state, burstTime, arrivalTime, completionTime, turnAroundTime, waitingTime
     };
 
     enum State {
